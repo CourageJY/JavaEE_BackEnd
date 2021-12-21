@@ -60,9 +60,6 @@ public class UserInfoController {
         Field[] field = info.getClass().getDeclaredFields();
         for (Field value : field) {
             String name = value.getName();
-            if (name.equals("id") || name.equals("password") || name.equals("credits")) {
-                continue;
-            }
             name = name.substring(0, 1).toUpperCase() + name.substring(1);
             Method get = info.getClass().getMethod("get" + name);
             String type = value.getGenericType().toString().substring(6);

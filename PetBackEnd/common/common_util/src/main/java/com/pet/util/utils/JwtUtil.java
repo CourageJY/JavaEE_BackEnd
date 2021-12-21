@@ -5,6 +5,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.pet.models.InstitutionWorker;
 import com.pet.models.User;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -48,5 +49,10 @@ public class JwtUtil {
                 .withExpiresAt(expiresDate)
                 .sign(Algorithm.HMAC256(SECRET));
         return token;
+    }
+    //利用得到用户ID
+    static public String getIDByToken(HttpServletRequest httpServletRequest){
+        String token = httpServletRequest.getHeader("token");// 从 http 请求头中取出 token
+        return JWT.decode(token).getAudience().get(0);
     }
 }

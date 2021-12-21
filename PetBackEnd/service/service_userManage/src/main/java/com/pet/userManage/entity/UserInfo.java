@@ -1,7 +1,6 @@
 package com.pet.userManage.entity;
 
 public class UserInfo {
-    private String id;
     private String name;
     private String gender;
     private String phoneNumber;
@@ -31,9 +30,5 @@ public class UserInfo {
 
     public String getName() {
         return name;
-    }
-
-    public String getId() {
-        return id;
     }
 }
