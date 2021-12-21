@@ -72,7 +72,7 @@ public class UserInfoController {
         return Result.wrapSuccessfulResult("Success!");
     }
 
-    @ApiOperation(value = "修改用户的详细信息")
+    @ApiOperation(value = "修改用户的密码")
     @RequestMapping(value = "/modify/password",method = RequestMethod.POST)
     public Result<String> ModifyPassword(@RequestParam("oldPassword") String oldPwd,
                                  @RequestParam("newPassword") String newPwd,
